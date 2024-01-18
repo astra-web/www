@@ -1,0 +1,89 @@
+
+*, body, html {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+   }
+    100% {
+        transform: rotate(360deg);
+   }
+}
+.gradient {
+    --size: 250px;
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 5));
+    background-image: linear-gradient(#37eba9, #5b37eb);
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+@media (min-width: 720px) {
+    .gradient {
+        --size: 600px;
+   }
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.button {
+    background: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px 12px;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    border: 2px solid transparent;
+    width: fit-content;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button.secondary {
+    background: #fff;
+    color: #000;
+    border: 2px solid #c7c7c7;
+}
+
+.button:hover {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.button.secondary:hover {
+    border: 2px solid #000;
+}
+
+.github-button:hover > img {
+    filter: invert(1);
+}
+
